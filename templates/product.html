@@ -35,7 +35,7 @@
           <div class="header-body">
             <div class="row align-items-center py-4">
               <div class="col-lg-6 col-7">
-                <h6 class="h2 text-white d-inline-block mb-0">Purchase Advisor</h6>
+                <h6 class="h2 text-white d-inline-block mb-0">Price Tracker</h6>
                 <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                   <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                     <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
@@ -45,8 +45,8 @@
                 </nav>
               </div>
               <div class="col-lg-6 col-5 text-right">
-                <a href="#" class="btn btn-sm btn-neutral">New</a>
-                <a href="#" class="btn btn-sm btn-neutral">Filters</a>
+                <!-- <a href="#" class="btn btn-sm btn-neutral">New</a>
+                <a href="#" class="btn btn-sm btn-neutral">Filters</a> -->
               </div>
             </div>
             <!-- Card stats -->
@@ -309,6 +309,9 @@
 
     <script>
       const ctx = document.getElementById('myHistoryChart');
+      var price = JSON.parse('{{data | tojson | safe}}');
+      console.log(price)
+      console.log(price.price_history);
       new Chart(ctx, {
         type: 'line',
         data: {
@@ -316,13 +319,9 @@
             data: [{
                 x: '2021-11-05 15:39:30',
                 y: 50
-            }, {
-                x: '2021-11-15 01:00:28',
-                y: 60
-            }, {
-                x: '2021-11-22 09:00:28',
-                y: 20
-            }]
+            },
+          ]
+
         }],
         },
         options: {
@@ -335,7 +334,7 @@
           scales: {
           x: {  
             type: 'time',
-            min: '2021-11-04 00:00:00',
+            
             grid: {
                      display: false
                     }
