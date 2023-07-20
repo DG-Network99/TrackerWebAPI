@@ -15,9 +15,9 @@ REPLY_ERROR = """<code>Use this command as a replay to any telegram message with
 
 Bot = Client(
     "my bot",
-    bot_token="5594793092:AAG0J9j8t3e5oaOHxRN6FtRE_BZ4Jq38zdQ",
-    api_id=int("13003049"),
-    api_hash="5c37465fe653a28519bb8b9b68269f5f"
+    bot_token="",
+    api_id=int(""),
+    api_hash=""
 
 )
 
